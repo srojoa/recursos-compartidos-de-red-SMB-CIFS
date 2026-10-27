@@ -188,7 +188,7 @@ nmcli connection show "Wired connection 1" | grep ipv4
 >        up iptables -t nat -A PREROUTING -i vmbr0 -p tcp --dport 2222 -j DNAT --to-destination 172.26.1.31:22
 >        down iptables -t nat -D PREROUTING -i vmbr0 -p tcp --dport 2222 -j DNAT --to-destination 172.26.1.31:22
 
-Desde nuestro Host de Ubuntu, es decir desde la terminal de Ubuntu 26.04 LTS:
+Desde nuestro Host de tu PC FÍSICO:
 ```bash
 ssh suse@192.168.122.104 -p 2222
 ``` 
