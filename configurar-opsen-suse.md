@@ -159,7 +159,41 @@ sudo nmcli connection down "Wired connection 1" && sudo nmcli connection up "Wir
 hostnamectl status
 nmcli connection show "Wired connection 1" | grep ipv4
 ``` 
-* Ir dispositivo y elegir el interfaz de red.
+* En el nodo root the Proxmox abrimos la shell:
+
+<img width="1262" height="262" alt="image" src="https://github.com/user-attachments/assets/8cbc2eb7-ddb0-4d08-bfb9-42ed28dc5522" />
+
+>root@proxmox:~# cat /etc/network/interfaces
+>auto lo
+>iface lo inet loopback
+>
+>iface nic0 inet manual
+>
+>auto vmbr0
+>iface vmbr0 inet static
+>        address 192.168.122.104/24
+>        gateway 192.168.122.1
+>        bridge-ports nic0
+>        bridge-stp off
+>        bridge-fd 0
+
+```bash
+nano /etc/network/interfaces
+``` 
+
+>auto lo
+>iface lo inet loopback
+>
+>iface nic0 inet manual
+>
+>auto vmbr0
+>iface vmbr0 inet static
+>        address 172.26.0.31/16
+>        gateway 172.26.0.1
+>        bridge-ports nic0
+>        bridge-stp off
+>        bridge-fd 0
+
 
 
 > INFORMACIÓN sobre los **ficheros de configuración de red** gestionados por Wicked.
