@@ -189,7 +189,7 @@ nmcli connection show "Wired connection 1" | grep ipv4
 >        # Regla de redirección de puertos (SSH por el puerto 2222)
 >        up iptables -t nat -A PREROUTING -i vmbr0 -p tcp --dport 2222 -j DNAT --to-destination 172.26.1.31:22
 >        down iptables -t nat -D PREROUTING -i vmbr0 -p tcp --dport 2222 -j DNAT --to-destination 172.26.1.31:22
-```
+
 
 ```bash
 ifreload -a
