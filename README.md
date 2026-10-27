@@ -1,10 +1,12 @@
-# Practica 3 |  Recursos compartidos en red Samba con OpenSUSE y Windows | 1ev | SOX 
+# Practica 3  | 1ev | SOX 
+
+# Recursos compartidos en red Samba con OpenSUSE y Windows
 Practica recursos compartidos de red SMB/CIFS
 
 ## Entrega
 
 * La entrega la realizaremos a través del repositorio Git.
-* Al terminar etiquetaremos la entrega con *samba*.
+* Al terminar etiquetaremos la entrega con nombre *Practica3_samba_nombre-del-alumno*.
 
 ## Introducción
 
@@ -12,9 +14,9 @@ Vamos a necesitar las siguientes máquinas:
 
 | ID  | Función  | SSOO     | IP estática  | Hostname  |
 | --- | -------- | -------- | ------------ | --------- |
-| MV1 | Servidor | OpenSUSE | 172.AA.XX.31 | serverXXg |
-| MV2 | Cliente  | OpenSUSE | 172.AA.XX.32 | clientXXg |
-| MV3 | Cliente  | Windows  | 172.AA.XX.11 | clientXXw |
+| MV1 | Servidor | OpenSUSE | 172.26.XX.31 | serverXXg |
+| MV2 | Cliente  | OpenSUSE | 172.26.XX.32 | clientXXg |
+| MV3 | Cliente  | Windows  | 172.26.XX.11 | clientXXw |
 
 
 ---
