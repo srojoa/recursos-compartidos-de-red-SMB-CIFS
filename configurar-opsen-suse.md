@@ -190,8 +190,7 @@ nmcli connection show "Wired connection 1" | grep ipv4
 
 Desde nuestro Host de Ubuntu, es decir desde la terminal de Ubuntu 26.04 LTS:
 ```bash
-$ ssh suse@192.168.122.104 -p 2222
-
+ssh suse@192.168.122.104 -p 2222
 ``` 
 
 >```auto lo
