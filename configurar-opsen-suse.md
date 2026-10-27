@@ -159,7 +159,7 @@ sudo nmcli connection down "Wired connection 1" && sudo nmcli connection up "Wir
 hostnamectl status
 nmcli connection show "Wired connection 1" | grep ipv4
 ``` 
-* En el nodo root the Proxmox abrimos la shell:
+* En el nodo **root the Proxmox** abrimos la shell:
 <img width="1255" height="302" alt="image" src="https://github.com/user-attachments/assets/f3be3b1f-b072-42b2-ad2b-d2ba1b18e0bb" />
 
 >root@proxmox:~# cat /etc/network/interfaces
@@ -190,21 +190,18 @@ nmcli connection show "Wired connection 1" | grep ipv4
 
 Desde nuestro Host de tu PC FÍSICO:
 ```bash
-ssh suse@192.168.122.104 -p 2222
+ssh nombre-del-alumno@192.168.122.104 -p 2222
 ``` 
 
->```auto lo
->iface lo inet loopback
->
->iface nic0 inet manual
->
->auto vmbr0
->iface vmbr0 inet static
->        address 172.26.0.31/16
->        gateway 172.26.0.1
->        bridge-ports nic0
->        bridge-stp off
->        bridge-fd 0
+>```The authenticity of host '[192.168.122.104]:2222 ([192.168.122.104]:2222)' can't be established.
+>ED25519 key fingerprint is: SHA256:0nrlIc9YjdexpF75LZK9Bj5Q+cw+vXAxmZ4/eCXPfcU
+>This host key is known by the following other names/addresses:
+>    ~/.ssh/known_hosts:4: [hashed name]
+>Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+>Warning: Permanently added '[192.168.122.104]:2222' (ED25519) to the list of known hosts.
+>(samuel@192.168.122.104) Password: 
+>Have a lot of fun...
+>samuel@suse:~> $
 
 ```bash 
 systemctl restart networking
