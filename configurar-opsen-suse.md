@@ -109,11 +109,11 @@ nmcli connection show
 ```
 <img width="727" height="70" alt="image" src="https://github.com/user-attachments/assets/e3a6c93f-4af8-4d80-98ff-b78f282ed43b" />
 
-1. Asignamos la IP y la máscara:
+1. Asignamos la **IP** y la **máscara**:
 ```bash
 sudo nmcli connection modify "Wired connection 1" ipv4.addresses 172.26.XX.31/16
 ```
-2. Poner el método en manual (IP fija):
+2. Poner el método en manual (**IP fija**):
 ```bash
 sudo nmcli connection modify "Wired connection 1" ipv4.method manual
 ```
@@ -132,8 +132,8 @@ sudo nmcli connection modify "Wired connection 1" ipv4.dhcp-send-hostname no
 ```
 * Marcamos `Asignar nombre de host a la IP bucle local`
 * Nombre de equipo: `primer-apellido-del-alumnoXXg`.
-    * Por ejemplo samuel01g
-* Nombre de dominio: `curso2627`
+    * Por ejemplo **samuel01g**
+* Nombre de dominio: `**curso2627**`
 ```bash
 sudo hostnamectl set-hostname samuel01g.curso2627
 ```
