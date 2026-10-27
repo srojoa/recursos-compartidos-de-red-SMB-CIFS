@@ -1,4 +1,4 @@
-# Practica 3  | 1ev | SOX 
+014993# Practica 3  | 1ev | SOX 
 
 # Recursos compartidos en red Samba con OpenSUSE y Windows
 Practica recursos compartidos de red SMB/CIFS
@@ -14,9 +14,9 @@ Vamos a necesitar las siguientes máquinas:
 
 | ID  | Función  | SSOO     | IP estática  | Hostname  |
 | --- | -------- | -------- | ------------ | --------- |
-| MV1 | Servidor | OpenSUSE | 172.26.XX.31 | serverXXg |
-| MV2 | Cliente  | OpenSUSE | 172.26.XX.32 | clientXXg |
-| MV3 | Cliente  | Windows  | 172.26.XX.11 | clientXXw |
+| MV1 | Servidor | [OpenSUSE Leap](https://download.opensuse.org/distribution/leap/16.0/offline/Leap-16.0-offline-installer-x86_64.install.iso) | 172.26.XX.31 | serverXXg |
+| MV2 | Cliente  | OpenSUSE Leap | 172.26.XX.32 | clientXXg |
+| MV3 | Cliente  | [Windows 11](https://go.microsoft.com/fwlink/?linkid=2171764)  | 172.26.XX.11 | clientXXw |
 
 
 ---
@@ -25,7 +25,7 @@ Vamos a necesitar las siguientes máquinas:
 
 ## 1.1 Preparativos
 
-* [Configurar](../../global/configuracion/opensuse.md) el servidor GNU/Linux.
+* [Configurar](https://github.com/srojoa/recursos-compartidos-de-red-SMB-CIFS/blob/main/configurar-opsen-suse.md) el servidor GNU/Linux.
 * Nombre de equipo: `serverXXg` (Donde XX es el número del puesto de cada uno).
 * Añadir en `/etc/hosts` los equipos `clientXXg` y `clientXXw` (Donde XX es el número del puesto de cada uno).
 
