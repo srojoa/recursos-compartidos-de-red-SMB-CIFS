@@ -164,7 +164,7 @@ nmcli connection show "Wired connection 1" | grep ipv4
 <img width="1262" height="262" alt="image" src="https://github.com/user-attachments/assets/8cbc2eb7-ddb0-4d08-bfb9-42ed28dc5522" />
 
 >root@proxmox:~# cat /etc/network/interfaces
->auto lo
+>```auto lo
 >iface lo inet loopback
 >
 >iface nic0 inet manual
@@ -181,7 +181,7 @@ nmcli connection show "Wired connection 1" | grep ipv4
 nano /etc/network/interfaces
 ``` 
 
->auto lo
+>```auto lo
 >iface lo inet loopback
 >
 >iface nic0 inet manual
