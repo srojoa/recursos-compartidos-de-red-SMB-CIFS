@@ -100,7 +100,7 @@ sudo nano /etc/hosts
 >ff02::2         ipv6-allrouters
 >ff02::3         ipv6-allhosts
 >
->172.26.1.31    nombre-del-alumno
+>172.26.1.31     nombre-del-alumno
 
 
 * Supongamos que tu conexión se llama "Wired connection 1" (o similar). Ejecuta estos comandos:
