@@ -34,16 +34,25 @@ Dentro del **Nodo** tenemos que tener algo tal que así:
 
 * Recordatorio.
     * Instalar SSH:
-    
-    `sudo zypper install -y openssh-server`
-
+    ```bash
+    sudo zypper install -y openssh-server`
+    ```
     * Habilitar servicio SSH:
-
-    `sudo systemctl enable --now sshd`
+   ```bash
+   sudo systemctl enable --now sshd
+   ```
 
     Verificar el estado:
+   ```bash
+   sudo systemctl status sshd
+   ```
 
-    `sudo systemctl status sshd`
+   Abrir el puerto en el cortafuegos (Firewall) de openSUSE:
+   ```bash
+   sudo firewall-cmd --permanent --add-service=ssh
+   sudo firewall-cmd --reload
+   ```
+    
 * Configurar lo siguiente durante la instalación:
 
 > ![opensuse-instalacion-configuracion.png](./images/opensuse-instalacion-configuracion.png)
@@ -51,20 +60,21 @@ Dentro del **Nodo** tenemos que tener algo tal que así:
 ---
 # Con el sistema operativo ya instalado
 Cambiar el nombre del equipo (Hostname)
-`sudo hostnamectl set-hostname nombre-del-alumno`
+```bash
+sudo hostnamectl set-hostname nombre-del-alumno
+```
 
-> * Donde aparezca AA debemos poner el código asignado al aula. Esto es:
->     * 18 para el aula103
->     * 19 para el aula109
 > * Donde aparezca XX debemos poner el código asignado al alumno. Esto es su número de PC.
 
-**Configurar la red y el nombre del equipo por YAST.** Una vez instalado el sistema operativo, podemos hacer cambios en la configuración de red usando la herramienta Yast. Vamos a `Inicio -> Configuración -> Yast -> Configuración de red`.
-* Seleccionamos el interfaz de red y editamos.
+**Configurar la red y el nombre del equipo mediante COMANDOS** Una vez instalado el sistema operativo, podemos hacer cambios en la configuración de red usando nano /etc/hosts. Vamos a `Inicio -> 
+* Seleccionamos el interfaz de red por defecto y editamos.
 * Marcamos IP fija.
 * IP: `172.26.XX.31` (Donde XX corresponde al nº de cada puesto).
     * Máscara de red: `255.255.0.0`
+```bash
+sudo nano /etc/hosts
+```
 
-`sudo nano /etc/hosts`
 >```
 >  GNU nano 8.6                                  /etc/hosts                                             
 >#
@@ -94,20 +104,24 @@ Cambiar el nombre del equipo (Hostname)
 
 
 # Supongamos que tu conexión se llama "Wired connection 1" (o similar). Ejecuta estos comandos:
->`nmcli connection show`
-<img width="727" height="70" alt="image" src="https://github.com/user-attachments/assets/b3183772-a5ae-48cc-977b-c5b5b68d37a3" />
+```bash
+nmcli connection show
+```
 
 
 1. Asignamos la IP y la máscara:
-
->`sudo nmcli connection modify "Wired connection 1" ipv4.addresses 172.26.XX.31/16`
-
+```bash
+sudo nmcli connection modify "Wired connection 1" ipv4.addresses 172.26.XX.31/16
+```
 2. Poner el método en manual (IP fija):
-
->`sudo nmcli connection modify "Wired connection 1" ipv4.method manual`
+```bash
+sudo nmcli connection modify "Wired connection 1" ipv4.method manual
+```
 
 3. Aplicar los cambios reiniciando la conexión:
-`sudo nmcli connection up "Wired connection 1"`
+```bash
+sudo nmcli connection up "Wired connection 1"`
+```
 
 * Siguiente
 
