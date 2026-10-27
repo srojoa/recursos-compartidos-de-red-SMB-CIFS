@@ -58,10 +58,7 @@ Dentro del **Nodo** tenemos que tener algo tal que así:
    sudo firewall-cmd --permanent --add-service=ssh
    sudo firewall-cmd --reload
    ```
-    
-* Configurar lo siguiente durante la instalación:
-
-> ![opensuse-instalacion-configuracion.png](./images/opensuse-instalacion-configuracion.png)
+  
 
 ---
 # Con el sistema operativo ya instalado
