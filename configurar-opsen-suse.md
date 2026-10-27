@@ -36,6 +36,9 @@ Dentro del **Nodo** tenemos que tener algo tal que así:
 
 
 * Recordatorio.
+     ```bash
+    sudo zypper refresh && sudo zypper update
+    ```
     * Instalar SSH:
     ```bash
     sudo zypper install -y openssh-server`
