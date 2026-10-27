@@ -120,7 +120,7 @@ sudo nmcli connection modify "Wired connection 1" ipv4.method manual
 
 3. Aplicar los cambios reiniciando la conexión:
 ```bash
-sudo nmcli connection up "Wired connection 1"`
+sudo nmcli connection up "Wired connection 1"
 ```
 
 * Siguiente
