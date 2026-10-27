@@ -33,14 +33,25 @@ Dentro del **Nodo** tenemos que tener algo tal que así:
 
 
 * Recordatorio.
-    * Abrir puerto SSH.
-    * Habilitar servicio SSH.
+    * Instalar SSH:
+    
+    `sudo zypper install -y openssh-server`
+
+    * Habilitar servicio SSH:
+
+    `sudo systemctl enable --now sshd`
+
+    Verificar el estado:
+
+    `sudo systemctl status sshd`
 * Configurar lo siguiente durante la instalación:
 
 > ![opensuse-instalacion-configuracion.png](./images/opensuse-instalacion-configuracion.png)
 
 ---
 # Con el sistema operativo ya instalado
+Cambiar el nombre del equipo (Hostname)
+`sudo hostnamectl set-hostname nombre-del-alumno`
 
 > * Donde aparezca AA debemos poner el código asignado al aula. Esto es:
 >     * 18 para el aula103
@@ -50,8 +61,54 @@ Dentro del **Nodo** tenemos que tener algo tal que así:
 **Configurar la red y el nombre del equipo por YAST.** Una vez instalado el sistema operativo, podemos hacer cambios en la configuración de red usando la herramienta Yast. Vamos a `Inicio -> Configuración -> Yast -> Configuración de red`.
 * Seleccionamos el interfaz de red y editamos.
 * Marcamos IP fija.
-* IP: `172.AA.XX.31` (Donde XX corresponde al nº de cada puesto).
+* IP: `172.26.XX.31` (Donde XX corresponde al nº de cada puesto).
     * Máscara de red: `255.255.0.0`
+
+`sudo nano /etc/hosts`
+>```
+>  GNU nano 8.6                                  /etc/hosts                                             
+>#
+># hosts         This file describes a number of hostname-to-address
+>#               mappings for the TCP/IP subsystem.  It is mostly
+>#               used at boot time, when no name servers are running.
+>#               On small systems, this file can be used instead of a
+>#               "named" name server.
+># Syntax:
+>#
+># IP-Address  Full-Qualified-Hostname  Short-Hostname
+>#
+>
+>127.0.0.1       localhost localhost.localdomain
+>::1             localhost localhost.localdomain ipv6-localhost ipv6-loopback
+>
+># special IPv6 addresses
+>fe00::0         ipv6-localnet
+>
+>ff00::0         ipv6-mcastprefix
+>ff02::1         ipv6-allnodes
+>ff02::2         ipv6-allrouters
+>ff02::3         ipv6-allhosts
+>
+>172.26.01.31    nombre-del-alumno
+```
+
+
+# Supongamos que tu conexión se llama "Wired connection 1" (o similar). Ejecuta estos comandos:
+>`nmcli connection show`
+<img width="727" height="70" alt="image" src="https://github.com/user-attachments/assets/b3183772-a5ae-48cc-977b-c5b5b68d37a3" />
+
+
+1. Asignamos la IP y la máscara:
+
+>`sudo nmcli connection modify "Wired connection 1" ipv4.addresses 172.26.XX.31/16`
+
+2. Poner el método en manual (IP fija):
+
+>`sudo nmcli connection modify "Wired connection 1" ipv4.method manual`
+
+3. Aplicar los cambios reiniciando la conexión:
+`sudo nmcli connection up "Wired connection 1"`
+
 * Siguiente
 
 Vamos a `Nombre de Host/DNS` y hacemos lo siguiente:
