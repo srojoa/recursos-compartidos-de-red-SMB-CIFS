@@ -18,6 +18,15 @@ Vamos a necesitar las siguientes máquinas:
 | MV2 | Cliente  | OpenSUSE Leap | 172.26.XX.32 | clientXXg |
 | MV3 | Cliente  | [Windows 11](https://go.microsoft.com/fwlink/?linkid=2171764)  | 172.26.XX.11 | clientXXw |
 
+**XX** - Es el numero del equipo que teneis en la pegatina superior en vuestra torre: 
+
+**xEjemplo**: 2_SMX_01 --> 
+
+| ID  | Función  | SSOO     | IP estática  | Hostname  |
+| --- | -------- | -------- | ------------ | --------- |
+| MV1 | Servidor | OpenSUSE Leap | 172.26.1.31 | serverXXg |
+| MV2 | Cliente  | OpenSUSE Leap | 172.26.1.32 | clientXXg |
+| MV3 | Cliente  | Windows 11 | 172.26.1.11 | clientXXw |
 
 ---
 
