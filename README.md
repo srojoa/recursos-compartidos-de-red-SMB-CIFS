@@ -1,4 +1,4 @@
-Practica 3  | 1ev | SOX 
+# Practica 3  | 1ev | SOX 
 
 # Recursos compartidos en red Samba con OpenSUSE y Windows
 Practica recursos compartidos de red SMB/CIFS
