@@ -194,7 +194,9 @@ nano /etc/network/interfaces
 >        bridge-stp off
 >        bridge-fd 0
 
-
+```bash 
+systemctl restart networking
+```
 
 > INFORMACIÓN sobre los **ficheros de configuración de red** gestionados por Wicked.
 >
