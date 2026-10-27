@@ -1,6 +1,8 @@
 # Parte 1 Configurar MV GNU/Linux OpenSUSE
 
 # Configurar MV GNU/Linux OpenSUSE
+**MAPA VISUAL:**
+<img width="1237" height="187" alt="image" src="https://github.com/user-attachments/assets/2e912439-8b8e-4182-b893-b6b6c2a50eef" />
 
 # Antes de empezar
 
@@ -200,8 +202,8 @@ ssh nombre-del-alumno@192.168.122.104 -p 2222
 >Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 >Warning: Permanently added '[192.168.122.104]:2222' (ED25519) to the list of known hosts.
 >(samuel@192.168.122.104) Password: 
->**Have a lot of fun..**.
->**samuel@suse:~> $**
+>Have a lot of fun...
+>samuel@suse:~> $
 
 
 
@@ -211,63 +213,42 @@ ssh nombre-del-alumno@192.168.122.104 -p 2222
 **Comprobar la configuración de RED**. Cuando la red no vaya bien, debemos primero hacer estas comprobaciones para averiguar dónde tenemos el problema.
 
 ```
-ip a                     # Información de red
-ip route                 # Información de la puerta de enlace
-ifstatus NOMBREINTERFAZ  # Configuración del interfaz de red
-ping 9.9.9.9             # Verifica la conectividad con Internet
-traceroute 9.9.9.9       # Comprobar enrutamiento   
-host www.nba.com         # Comprueba DNS
+🐧 FASE 1: Comprobaciones DENTRO de la Máquina Virtual (OpenSUSE)
+ip a                            # Información de red
+ip route                        # Información de la puerta de enlace
+sudo systemctl status sshd      # El servicio SSH está vivo?
+sudo systemctl status firewalld # El cortafuegos interno está bloqueando?
+
+🛡️ FASE 2: Comprobaciones (Proxmox)
+ip a show vmbr0                 # El puente (Bridge) tiene las IPs correctas?
+ip route get 172.26.XX.31       # El enrutamiento está bien dirigido?
+sysctl net.ipv4.ip_forward      # El sistema actúa como router? net.ipv4.ip_forward = 1
+```
+   >net.ipv4.ip_forward = 1
+```
+🔥FASE 3: El "Muro de los Lamentos" (Cortafuegos de Proxmox)
+qm list
+qm config 101 | grep firewall  # El firewall de la VM está bloqueando?
+
 ```
 
-> * Si tenemos varias máquinas usaremos las IP 172.AA.XX.32, 172.AA.XX.33, etc.
-> * Si tenemos varias máquinas las llamaremos vargas30g2, vargas30g3, vargas30g4, etc.
-
-**Usuario**. Comprobar que se ha creado el usuario correctamente con los siguientes comandos:
-* `id nombre-alumno`, muestra información del usuario
-* `su -l nombre-alumno`, abrimos una sesión con el usuario.
-
-**Nombre de EQUIPO**: Comprobar nombre del equipo.
-* Comprobar hostname. Ejemplo:
-```
-david@vargas42g:~> cat /etc/hostname
-vargas42g.curso1819
-```
-* Comprobar host. Ejemplo:
+   >boot: order=scsi0;ide2;net0
+   >net0: virtio=BC:24:11:a1:eb:ca,bridge=vmbr0,firewall=0
 
 ```
-david@vargas42g:~> cat /etc/hosts
+🌐 FASE 4: Comprobaciones de Conectividad (El "Ping")
+1. Desde la VM a Proxmox:
 
-127.0.0.1	localhost
-127.0.0.2 vargas42g.curso1819   vargas42g
+ping -c 4 172.26.0.254
 
-# special IPv6 addresses
-::1             localhost ipv6-localhost ipv6-loopback
-fe00::0         ipv6-localnet
-ff00::0         ipv6-mcastprefix
-ff02::1         ipv6-allnodes
-ff02::2         ipv6-allrouters
-ff02::3         ipv6-allhosts
+2. Desde Proxmox a la VM:
+
+ping -c 4 172.26.1.31
+
+3. El "Espía" definitivo:
+tcpdump -i any -n icmp # Ejecuta Desde Proxmox
+ping -c 4 172.26.1.31  # Ejecuta Desde OpenSUSE
 ```
 
-* Comprobar con los siguientes comandos:
 
-```
-hostname -f      # Muestra nombre-maquina.nombre-dominio
-hostname -a      # Muestra nombre-maquina
-hostname -d      # Muestra nombre-dominio
-```
 
----
-# ANEXO
-
-## Cambiar el idioma/country desde comandos
-
-https://www.suse.com/documentation/opensuse110/opensuse110_reference/data/sec_suse_l10n.html
-
-## End of life
-
-https://news.opensuse.org/2022/01/13/opensuse-reaches-eol/
-
-Users can upgrade from 15.2 to 15.3 by downloading the iso image
-or following the instructions on how to upgrade
-found on https://en.opensuse.org/SDB:System_upgrade.
