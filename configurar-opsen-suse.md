@@ -143,9 +143,9 @@ sudo nmcli connection modify "Wired connection 1" ipv4.dns "9.9.9.9"
 # Asignacion de nombre de host a la IP bucle local
 echo "127.0.0.1 samuel01g.curso2627 samuel01g" | sudo tee -a /etc/hosts
 ```
-* Vamos a Encaminamiento, y ponemos Gateway o pasarela IPv4: "172.26.0.1". Esto es la puerta de enlace o encaminamiento:
+* Vamos a Encaminamiento, y ponemos Gateway o pasarela IPv4: "172.26.0.254". Esto es la puerta de enlace o encaminamiento:
 ```bash
-sudo nmcli connection modify "Wired connection 1" ipv4.gateway "172.26.0.1"
+sudo nmcli connection modify "Wired connection 1" ipv4.gateway "172.26.0.254"
 ```
 
 * Interfaz de Red y Aplicación de Cambios:
