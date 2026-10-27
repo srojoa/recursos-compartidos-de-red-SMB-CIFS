@@ -160,8 +160,7 @@ hostnamectl status
 nmcli connection show "Wired connection 1" | grep ipv4
 ``` 
 * En el nodo root the Proxmox abrimos la shell:
-
-<img width="1262" height="262" alt="image" src="https://github.com/user-attachments/assets/8cbc2eb7-ddb0-4d08-bfb9-42ed28dc5522" />
+<img width="1255" height="302" alt="image" src="https://github.com/user-attachments/assets/f3be3b1f-b072-42b2-ad2b-d2ba1b18e0bb" />
 
 >root@proxmox:~# cat /etc/network/interfaces
 >```auto lo
@@ -176,9 +175,23 @@ nmcli connection show "Wired connection 1" | grep ipv4
 >        bridge-ports nic0
 >        bridge-stp off
 >        bridge-fd 0
+>        # Añadir la IP secundaria para la red de la VM
+>        up ip addr add 172.26.0.254/16 dev vmbr0
+>        down ip addr del 172.26.0.254/16 dev vmbr0
+>        # Forzar el origen correcto para la red de la VM
+>        up ip route add 172.26.0.0/16 dev vmbr0 src 172.26.0.254
+>        # Activar el reenvío de paquetes (IP Forwarding)
+>        up sysctl -w net.ipv4.ip_forward=1
+>        # Aceptar el tráfico de una red a otra
+>        up iptables -P FORWARD ACCEPT
+>        # Regla de redirección de puertos (SSH por el puerto 2222)
+>        up iptables -t nat -A PREROUTING -i vmbr0 -p tcp --dport 2222 -j DNAT --to-destination 172.26.1.31:22
+>        down iptables -t nat -D PREROUTING -i vmbr0 -p tcp --dport 2222 -j DNAT --to-destination 172.26.1.31:22
 
+Desde nuestro Host de Ubuntu, es decir desde la terminal de Ubuntu 26.04 LTS:
 ```bash
-nano /etc/network/interfaces
+$ ssh suse@192.168.122.104 -p 2222
+
 ``` 
 
 >```auto lo
