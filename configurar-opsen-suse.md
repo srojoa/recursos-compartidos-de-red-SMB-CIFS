@@ -16,6 +16,7 @@ Dentro del **Nodo** tenemos que tener algo tal que así:
 
 
 
+
 > Para comprobar la ISO de instalación usamos el siguiente comando: `sha256sum -c opensuse-version.sha256`.
 
 # Durante la instalación del SO
@@ -100,14 +101,13 @@ sudo nano /etc/hosts
 >ff02::3         ipv6-allhosts
 >
 >172.26.01.31    nombre-del-alumno
-```
 
 
-# Supongamos que tu conexión se llama "Wired connection 1" (o similar). Ejecuta estos comandos:
+* Supongamos que tu conexión se llama "Wired connection 1" (o similar). Ejecuta estos comandos:
 ```bash
 nmcli connection show
 ```
-
+<img width="727" height="70" alt="image" src="https://github.com/user-attachments/assets/e3a6c93f-4af8-4d80-98ff-b78f282ed43b" />
 
 1. Asignamos la IP y la máscara:
 ```bash
@@ -127,12 +127,38 @@ sudo nmcli connection up "Wired connection 1"`
 
 Vamos a `Nombre de Host/DNS` y hacemos lo siguiente:
 * Desmarcamos `Modificar nombre mediante DHCP`
+```bash
+sudo nmcli connection modify "Wired connection 1" ipv4.dhcp-send-hostname no
+```
 * Marcamos `Asignar nombre de host a la IP bucle local`
 * Nombre de equipo: `primer-apellido-del-alumnoXXg`.
-    * Por ejemplo vargas30g
+    * Por ejemplo samuel01g
 * Nombre de dominio: `curso2627`
+```bash
+sudo hostnamectl set-hostname samuel01g.curso2627
+```
 * Servidor DNS: `9.9.9.9`.
-* Vamos a `Encaminamiento`, y ponemos Gateway o pasarela IPv4: `172.AA.0.1`. Esto es la puerta de enlace o encaminamiento.
+```bash
+sudo nmcli connection modify "Wired connection 1" ipv4.dns "9.9.9.9"
+# Asignacion de nombre de host a la IP bucle local
+echo "127.0.0.1 samuel01g.curso2627 samuel01g" | sudo tee -a /etc/hosts
+```
+* Vamos a Encaminamiento, y ponemos Gateway o pasarela IPv4: "172.26.0.1". Esto es la puerta de enlace o encaminamiento:
+```bash
+sudo nmcli connection modify "Wired connection 1" ipv4.gateway "172.26.0.1"
+```
+
+* Interfaz de Red y Aplicación de Cambios:
+```bash
+sudo nmcli connection modify "Wired connection 1" ipv4.method manual
+sudo nmcli connection down "Wired connection 1" && sudo nmcli connection up "Wired connection 1"
+```
+
+✅ Verificación final:
+```bash
+hostnamectl status
+nmcli connection show "Wired connection 1" | grep ipv4
+``` 
 * Ir dispositivo y elegir el interfaz de red.
 
 
