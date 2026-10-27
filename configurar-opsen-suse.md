@@ -200,34 +200,10 @@ ssh nombre-del-alumno@192.168.122.104 -p 2222
 >Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 >Warning: Permanently added '[192.168.122.104]:2222' (ED25519) to the list of known hosts.
 >(samuel@192.168.122.104) Password: 
->Have a lot of fun...
->samuel@suse:~> $
+>**Have a lot of fun..**.
+>**samuel@suse:~> $**
 
-```bash 
-systemctl restart networking
-```
 
-> INFORMACIÓN sobre los **ficheros de configuración de red** gestionados por Wicked.
->
-> El fichero de configuración de red es `/etc/sysconfig/network/ifcfg-eth0` para la tarjeta `eth0`.
-> Ejemplo de configuración del modo automático o dinámico:
-> ```
-> BOOTPROTO='dhcp'
-> STARTMODE='auto'
-> DHCLIENT_SET_DEFAULT_ROUTE='yes'
-> ```
->
-> Ejemplo de configuración del modo manual o estático:
-> ```
-> BOOTPROTO='static'
-> STARTMODE='auto'
-> IPADDR='192.168.16.11/24'
-> ```
->
-> Fichero de configuración de la puerta de enlace `/etc/sysconfig/network/ifroute-eth0` para la tarjeta `eth0`. Ejemplo: `default 172.19.0.1 - eth0`
->
-> Fichero de configuración del servidor DNS `/etc/sysconfig/network/config`. Parámetro
-`NETCONFIG_DNS_STATIC_SERVERS="9.9.9.9"`
 
 ---
 # Comprobaciones finales
