@@ -82,6 +82,9 @@ sudo zypper install samba samba-client
      workgroup = curso2627
      server role = standalone server
 ```
+   ```bash
+   sudo testparm
+   ```
 * En la pestaña de `Inicio` definimos
     * Iniciar el servicio durante el arranque de la máquina.
     * Ajustes del cortafuegos -> Abrir puertos
