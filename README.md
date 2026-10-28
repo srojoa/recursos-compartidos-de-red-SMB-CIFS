@@ -27,7 +27,7 @@ Vamos a necesitar las siguientes máquinas:
 | --- | -------- | -------- | ------------ | --------- |
 | MV1 | Servidor | OpenSUSE Leap | 172.26.1.31 | serverXXg |
 | MV2 | Cliente  | OpenSUSE Leap | 172.26.1.32 | clientXXg |
-| MV3 | Cliente  | Windows 10 | 172.26.1.11 | clientXXw |
+| MV3 | Cliente  | Windows 11 | 172.26.1.11 | clientXXw |
 
 ---
 
