@@ -6,7 +6,7 @@ Practica recursos compartidos de red SMB/CIFS
 ## Entrega
 
 * La entrega la realizaremos a través del repositorio Git.
-* Al terminar etiquetaremos la entrega con nombre *Practica3_samba_nombre-del-alumno*.
+* Al terminar etiquetaremos la entrega con nombre *Practica3_nombre-del-alumno*.
 
 ## Introducción
 
