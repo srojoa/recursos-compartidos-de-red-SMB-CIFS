@@ -74,9 +74,14 @@ sudo zypper install samba samba-client
 > Como estamos en OpenSUSE podemos a usar Yast. El paquete se llama `yast2-samba-server`.
 
 * `cp /etc/samba/smb.conf /etc/samba/smb.conf.backup`, hacer una copia de seguridad del fichero de configuración antes de modificarlo.
-* `Yast -> Samba Server`
+* `sudo nano /etc/samba/smb.conf`
     * Workgroup: `curso2627`
     * Sin controlador de dominio.
+```
+   [global]
+     workgroup = curso2627
+     server role = standalone server
+```
 * En la pestaña de `Inicio` definimos
     * Iniciar el servicio durante el arranque de la máquina.
     * Ajustes del cortafuegos -> Abrir puertos
