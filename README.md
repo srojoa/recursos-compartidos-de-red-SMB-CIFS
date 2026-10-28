@@ -17,6 +17,7 @@ Vamos a necesitar las siguientes máquinas:
 | MV1 | Servidor | [OpenSUSE Leap](https://download.opensuse.org/distribution/leap/16.0/offline/Leap-16.0-offline-installer-x86_64.install.iso) | 172.26.XX.31 | serverXXg |
 | MV2 | Cliente  | OpenSUSE Leap | 172.26.XX.32 | clientXXg |
 | MV3 | Cliente  | [Windows 10](https://www.microsoft.com/es-es/software-download/windows10iso)  | 172.26.XX.11 | clientXXw |
+|  |   | [Virtio-Win ISO](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Driver-installation)  |  |  |
 
 **XX** - Es el numero del equipo que teneis en la pegatina superior en vuestra torre: 
 
