@@ -22,7 +22,9 @@
 <img width="840" height="629" alt="image" src="https://github.com/user-attachments/assets/e86e2e20-888b-43db-a1da-4f684a4a72b5" />
 
 
-En este punto:
+
+**En este punto:**
+
 <img width="1188" height="851" alt="image" src="https://github.com/user-attachments/assets/f4b299cf-349a-40f1-bcb4-d9f26a4b477a" />
 
 Presiona **Shift + F10** para abrir el Command Prompt.
@@ -33,7 +35,15 @@ Escribe **OOBE\BYPASSNRO** y presiona **ENTER**
 
 <img width="1060" height="777" alt="image" src="https://github.com/user-attachments/assets/e2e27e81-4ae4-4551-a03c-b8600be2745e" />
 
-Contrroladora Ethernet --> Click Derecho --> Actualizar Controlador --> Buscar Manualmente --> Examinar
+Contrroladora Ethernet 
+                      |
+                      --> Click Derecho 
+                                      |
+                                      --> Actualizar Controlador
+                                                               |
+                                                               --> Buscar Manualmente 
+                                                                                    |
+                                                                                    --> Examinar
 
 <img width="261" height="255" alt="image" src="https://github.com/user-attachments/assets/ebc3de0a-df7f-438d-baa3-05d1ca6a1ca1" />
 
