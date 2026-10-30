@@ -6,7 +6,7 @@
 
 # Antes de empezar
 
-Crear la máquina MV1 - serverXXg - OpenSuseLeap con:
+Crear la máquina _MV1 - serverXXg - OpenSuseLeap_ con:
 * Crear un **disco de 20 GB**.
 * Tarjeta de red en `modo puente`:
 
