@@ -197,7 +197,7 @@ ifreload -a
 
 Desde nuestro Host de tu PC FÍSICO:
 ```bash
-ssh nombre-del-alumno@192.168.122.104 -p 2222
+ssh serverXXg@192.168.122.104 -p 2222
 ``` 
 
 >```The authenticity of host '[192.168.122.104]:2222 ([192.168.122.104]:2222)' can't be established.
