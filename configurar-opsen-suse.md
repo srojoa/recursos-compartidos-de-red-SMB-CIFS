@@ -208,6 +208,7 @@ ifreload -a
 ``` 
 
 * Desde nuestro Host de tu PC FÍSICO:
+  * Conectarnos a _MV1 - serverXXg_
 ```bash
 ssh serverXXg@192.168.122.104 -p 2222
 ``` 
@@ -221,6 +222,21 @@ ssh serverXXg@192.168.122.104 -p 2222
 >(samuel@192.168.122.104) Password: 
 >Have a lot of fun...
 >serverXXg@samuel01g:~> $
+
+* Conectarnos a _MV2 - clienteXXg_
+```bash
+ssh clienteXXg@192.168.122.104 -p 2223
+``` 
+
+>```The authenticity of host '[192.168.122.104]:2222 ([192.168.122.104]:2222)' can't be established.
+>ED25519 key fingerprint is: SHA256:0nrlIc9YjdexpF75LZK9Bj5Q+cw+vXAxmZ4/eCXPfcU
+>This host key is known by the following other names/addresses:
+>    ~/.ssh/known_hosts:4: [hashed name]
+>Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+>Warning: Permanently added '[192.168.122.104]:2222' (ED25519) to the list of known hosts.
+>(samuel@192.168.122.104) Password: 
+>Have a lot of fun...
+>clienteXXg@samuel01g:~> $
 
 
 
