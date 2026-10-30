@@ -31,6 +31,7 @@ Vamos a necesitar las siguientes máquinas:
 
 
 Lo ideal sería sin hacer cambios en MV1 nada mas instalar el SO OpenSuseLeap clonarla para poder usar la MV2, habria que cambiar el Hostname y la IP estática.
+
 ---
 
 # 1. Servidor Samba (MV1)
