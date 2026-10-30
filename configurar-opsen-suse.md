@@ -162,8 +162,14 @@ hostnamectl status
 nmcli connection show "Wired connection 1" | grep ipv4
 ``` 
 * En el nodo **root the Proxmox** abrimos la shell:
+```bash
+ip addr show vmbr0
+``` 
 <img width="1255" height="302" alt="image" src="https://github.com/user-attachments/assets/f3be3b1f-b072-42b2-ad2b-d2ba1b18e0bb" />
 
+```bash
+cat /etc/network/interfaces
+``` 
 >root@proxmox:~# cat /etc/network/interfaces
 >```auto lo
 >iface lo inet loopback
