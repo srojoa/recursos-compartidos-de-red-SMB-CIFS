@@ -219,11 +219,11 @@ ssh serverXXg@192.168.122.104 -p 2222
 >    ~/.ssh/known_hosts:4: [hashed name]
 >Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 >Warning: Permanently added '[192.168.122.104]:2222' (ED25519) to the list of known hosts.
->(samuel@192.168.122.104) Password: 
+>(serverXXg@192.168.122.104) Password: 
 >Have a lot of fun...
 >serverXXg@samuel01g:~> $
 
-* Conectarnos a _MV2 - clienteXXg_
+   * Conectarnos a _MV2 - clienteXXg_
 ```bash
 ssh clienteXXg@192.168.122.104 -p 2223
 ``` 
@@ -234,7 +234,7 @@ ssh clienteXXg@192.168.122.104 -p 2223
 >    ~/.ssh/known_hosts:4: [hashed name]
 >Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 >Warning: Permanently added '[192.168.122.104]:2222' (ED25519) to the list of known hosts.
->(samuel@192.168.122.104) Password: 
+>(clienteXXg@192.168.122.104) Password: 
 >Have a lot of fun...
 >clienteXXg@samuel01g:~> $
 
