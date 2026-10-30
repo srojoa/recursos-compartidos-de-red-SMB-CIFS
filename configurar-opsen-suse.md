@@ -48,12 +48,12 @@ Dentro del **Nodo** tenemos que tener algo tal que así:
    sudo systemctl enable --now sshd
    ```
 
-    Verificar el estado:
+    * Verificar el estado:
    ```bash
    sudo systemctl status sshd
    ```
 
-   Abrir el puerto en el cortafuegos (Firewall) de openSUSE:
+   * Abrir el puerto en el cortafuegos (Firewall) de openSUSE:
    ```bash
    sudo firewall-cmd --permanent --add-service=ssh
    sudo firewall-cmd --reload
@@ -62,7 +62,7 @@ Dentro del **Nodo** tenemos que tener algo tal que así:
 
 ---
 # Con el sistema operativo ya instalado
-Cambiar el nombre del equipo (Hostname)
+* Cambiar el nombre del equipo (Hostname)
 ```bash
 sudo hostnamectl set-hostname nombre-del-alumno
 ```
@@ -204,7 +204,7 @@ cat /etc/network/interfaces
 ifreload -a
 ``` 
 
-Desde nuestro Host de tu PC FÍSICO:
+* Desde nuestro Host de tu PC FÍSICO:
 ```bash
 ssh serverXXg@192.168.122.104 -p 2222
 ``` 
