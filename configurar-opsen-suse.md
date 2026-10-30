@@ -125,8 +125,6 @@ sudo nmcli connection modify "Wired connection 1" ipv4.method manual
 sudo nmcli connection up "Wired connection 1"
 ```
 
-* Siguiente
-
 Vamos a `Nombre de Host/DNS` y hacemos lo siguiente:
 * Desmarcamos `Modificar nombre mediante DHCP`
 ```bash
