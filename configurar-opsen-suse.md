@@ -217,7 +217,7 @@ ssh serverXXg@192.168.122.104 -p 2222
 >Warning: Permanently added '[192.168.122.104]:2222' (ED25519) to the list of known hosts.
 >(samuel@192.168.122.104) Password: 
 >Have a lot of fun...
->samuel@suse:~> $
+>serverXXg@samuel01g:~> $
 
 
 
