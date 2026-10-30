@@ -165,6 +165,9 @@ nmcli connection show "Wired connection 1" | grep ipv4
 ```bash
 ip addr show vmbr0
 ``` 
+```bash
+ip addr show nic0
+``` 
 <img width="1255" height="302" alt="image" src="https://github.com/user-attachments/assets/f3be3b1f-b072-42b2-ad2b-d2ba1b18e0bb" />
 
 ```bash
