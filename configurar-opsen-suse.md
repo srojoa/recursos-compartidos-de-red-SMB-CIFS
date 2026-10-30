@@ -233,8 +233,9 @@ sysctl net.ipv4.ip_forward      # El sistema actúa como router? net.ipv4.ip_for
 ```
 🔥FASE 3: El "Muro de los Lamentos" (Cortafuegos de Proxmox)
 qm list
-qm config 101 | grep firewall  # El firewall de la VM está bloqueando?
+qm config 101 | grep firewall  # El firewall de la VM está bloqueando cuando en la salida del comando vemoa firewall=1
 
+Esto es lo que debemos ver cuando está desbloqueado firewall=0:
 ```
 
    >boot: order=scsi0;ide2;net0
