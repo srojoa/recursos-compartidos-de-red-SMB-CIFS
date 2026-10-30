@@ -196,6 +196,11 @@ cat /etc/network/interfaces
 >        # Regla de redirección de puertos (SSH por el puerto 2222)
 >        up iptables -t nat -A PREROUTING -i vmbr0 -p tcp --dport 2222 -j DNAT --to-destination 172.26.1.31:22
 >        down iptables -t nat -D PREROUTING -i vmbr0 -p tcp --dport 2222 -j DNAT --to-destination 172.26.1.31:22
+>
+>
+>        # Regla de redirección de puertos para VM 2 - clienteXXg - OpenSuseLeap (SSH por el puerto 2223)
+>        up iptables -t nat -A PREROUTING -i vmbr0 -p tcp --dport 2223 -j DNAT --to-destination 172.26.1.32:22
+>        down iptables -t nat -D PREROUTING -i vmbr0 -p tcp --dport 2223 -j DNAT --to-destination 172.26.1.32:22
 
 * Aplicar los cambios:
 ```bash
