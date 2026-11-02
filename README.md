@@ -41,6 +41,27 @@ Lo ideal sería sin hacer cambios en MV1 nada mas instalar el SO OpenSuseLeap cl
 * [Configurar](https://github.com/srojoa/recursos-compartidos-de-red-SMB-CIFS/blob/main/configurar-opsen-suse.md) el servidor GNU/Linux.
 * Nombre de equipo: `serverXXg` (Donde XX es el número del puesto de cada uno).
 * Añadir en `/etc/hosts` los equipos `clientXXg` y `clientXXw` (Donde XX es el número del puesto de cada uno).
+  >```
+  >serverXXg@samuel01g:/home/serverXXg # cat /etc/hosts
+  > # IP-Address  Full-Qualified-Hostname  Short-Hostname
+  > #
+  >
+  > 127.0.0.1	localhost localhost.localdomain
+  > ::1		localhost localhost.localdomain ipv6-localhost ipv6-loopback
+  >
+  > # special IPv6 addresses
+  > fe00::0         ipv6-localnet
+  >
+  > ff00::0         ipv6-mcastprefix
+  > ff02::1         ipv6-allnodes
+  > ff02::2         ipv6-allrouters
+  > ff02::3         ipv6-allhosts
+  >
+  > 127.0.0.1       localhost samuel01g samuel01g.curso2627
+  > 172.26.1.31     samuel01g
+  > 172.26.1.32     clientXXg
+  > 172.26.1.11     clientXXw
+
 
 ## 1.2 Usuarios locales
 
