@@ -245,6 +245,13 @@ Comprobar que el servicio SMB/CIF está a la escucha:
 ```bash
    sudo lsof -i -Pn
    ```
+>```
+>COMMAND    PID      USER FD   TYPE DEVICE SIZE/OFF NODE NAME
+>smbd      3764      root 27u  IPv6  33996      0t0  TCP *:445 (LISTEN)
+>smbd      3764      root 28u  IPv6  33997      0t0  TCP *:139 (LISTEN)
+>smbd      3764      root 29u  IPv4  33998      0t0  TCP *:445 (LISTEN)
+>smbd      3764      root 30u  IPv4  33999      0t0  TCP *:139 (LISTEN)
+
    
 # 2. Windows
 
