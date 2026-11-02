@@ -237,13 +237,15 @@ Después de crear los usuarios en el sistema, hay que añadirlos a Samba.
 
 ## 1.7 Reiniciar
 
-> Enlaces de interés:
->
-> * [Demonios Samba y servicios relacionados](http://web.mit.edu/rhel-doc/4/RH-DOCS/rhel-rg-es-4/s1-samba-daemons.html)
-
-* Ahora que hemos terminado con el servidor, hay que recargar los ficheros de configuración del servicio. Esto es, leer los cambios de configuración. Podemos hacerlo por `Yast -> Servicios`, o usar los comandos: `systemctl restart smb` y `systemctl restart nmb`.
-* `sudo lsof -i -Pn`, comprobar que el servicio SMB/CIF está a la escucha.
-
+* Ahora que hemos terminado con el servidor, hay que recargar los ficheros de configuración del servicio. Esto es, leer los cambios de configuración. Podemos hacerlo por `Yast -> Servicios`, o usar los comandos: 
+```bash
+   sudo systemctl restart smb nmb
+   ```
+Comprobar que el servicio SMB/CIF está a la escucha:
+```bash
+   sudo lsof -i -Pn
+   ```
+   
 # 2. Windows
 
 * [Configurar](../../global/configuracion/windows.md) el cliente Windows.
