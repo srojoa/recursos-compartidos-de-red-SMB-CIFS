@@ -92,6 +92,32 @@ sudo zypper install samba samba-client
     * Iniciar el servicio durante el arranque de la máquina.
     * Ajustes del cortafuegos -> Abrir puertos
 
+    Chequear:
+   ```bash
+   sudo systemctl status smb nmb
+   ```
+   >``` ○ smb.service - Samba SMB Daemon
+   >  Loaded: loaded (/usr/lib/systemd/system/smb.service; enabled; preset: disabled)
+   >  Active: inactive (dead)
+   >    Docs: man:smbd(8)
+   >          man:samba(7)
+   >          man:smb.conf(5)
+
+   >``` ○ nmb.service - Samba NMB Daemon
+   >  Loaded: loaded (/usr/lib/systemd/system/nmb.service; enabled; preset: disabled)
+   >  Active: inactive (dead)
+   >    Docs: man:nmbd(8)
+   >          man:samba(7)
+   >          man:smb.conf(5)
+
+Si vemos que el servicio de sambaestá muerto tenemos que ponerlo en  **Active: active (running)**:
+   ```bash
+   sudo systemctl start smb nmb
+   sudo systemctl status smb nmb
+   sudo ss -tlnp | grep -E '139|445'
+   ```
+   
+
 > **Comprobar CORTAFUEGOS**
 >
 > Para descartar un problema del servidor Samba con el cortafuegos, usaremos
