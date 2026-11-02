@@ -225,7 +225,15 @@ Después de crear los usuarios en el sistema, hay que añadirlos a Samba.
     * **¡OJO!: NO te saltes este paso.**
     * USUARIO son los usuarios que se conectarán a los recursos compartidos SMB/CIFS.
     * Esto hay que hacerlo para cada uno de los usuarios de Samba.
-* `pdbedit -L`, para comprobar la lista de usuarios Samba.
+* `pdbedit -L`, para comprobar la lista de usuarios Samba:
+>```
+>serverXXg@samuel01g:~> pdbedit -L
+>pirata1:1001:
+>soldado1:1003:
+>supersamba:1005:
+>pirata2:1002:
+>soldado2:1004:
+
 
 ## 1.7 Reiniciar
 
