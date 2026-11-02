@@ -92,7 +92,7 @@ sudo zypper install samba samba-client
     * Iniciar el servicio durante el arranque de la máquina.
     * Ajustes del cortafuegos -> Abrir puertos
 
-    Chequear:
+    Chequear desde ell Servidor:
    ```bash
    sudo systemctl status smb nmb
    ```
@@ -186,6 +186,37 @@ Ejemplo de fichero de configuración:
    ```bash
    sudo systemctl restart smb nmb
    ```
+* Chequear desde el Servidor:
+>```
+>serverXXg@samuel01g:/home/serverXXg # smbclient -L //127.0.0.1 -N -U% -m SMB2
+>
+>	Sharename       Type      Comment
+>	---------       ----      -------
+>	profiles        Disk      Network Profiles Service
+>	users           Disk      All users
+>	print$          Disk      Printer Drivers
+>	public01        Disk      public de samuel-01
+>	castillo01      Disk      castillo de samuel-01
+>	barco01         Disk      barco de samuel-01
+>	IPC$            IPC       IPC Service (Servidor de samuel-01)
+>	sambaguest      Disk      Home Directories
+>SMB1 disabled -- no workgroup available
+
+* Chequear desde el Cliente:
+>```
+>clienteXXg@samuel01g:~> smbclient -L //172.26.1.31 -N -U% -m SMB2
+>
+>	Sharename       Type      Comment
+>	---------       ----      -------
+>	profiles        Disk      Network Profiles Service
+>	users           Disk      All users
+>	print$          Disk      Printer Drivers
+>	public01        Disk      public de samuel-01
+>	castillo01      Disk      castillo de samuel-01
+>	barco01         Disk      barco de samuel-01
+>	IPC$            IPC       IPC Service (Servidor de samuel-01)
+>	sambaguest      Disk      Home Directories
+>SMB1 disabled -- no workgroup available
 
 ## 1.6 Usuarios Samba
 
