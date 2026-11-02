@@ -52,6 +52,35 @@ Contrroladora Ethernet
 <img width="261" height="255" alt="image" src="https://github.com/user-attachments/assets/06bd86d9-482a-40ea-ad04-502eff7f4b9e" />
 
 
+**Paso 1: Configurar IP y Nombre de equipo en Windows 11**
+
+* **A. Cambiar el Nombre del equipo:**
+  
+  Abre Configuración (Settings) -> Sistema (System) -> Acerca de (About).
+  
+  Haz clic en Cambiar el nombre de este equipo (Rename this PC).
+  
+  Escribe client01w y reinicia el equipo cuando te lo pida.
+  
+ * **B. Configurar la IP estática:**
+  
+  Ve a Configuración -> Red e Internet (Network & Internet) -> Ethernet.
+  
+  Haz clic en Editar (Edit) al lado de "Asignación de IP" (IP assignment).
+  
+  Cambia a Manual y activa IPv4.
+  
+  Rellena los datos:
+  
+  Dirección IP: 172.26.1.11
+  
+  Máscara de subred: 255.255.0.0 (o /16)
+  
+  Puerta de enlace: 172.26.0.254
+  
+  DNS preferido: 172.26.0.254
+  
+  Haz clic en Guardar.
 
 
 
