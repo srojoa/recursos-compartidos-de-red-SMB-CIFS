@@ -83,6 +83,27 @@ Contrroladora Ethernet
   Haz clic en Guardar.
 
 
+📝 **Paso 2: Configurar el archivo hosts de Windows**
+El archivo hosts permite que Windows resuelva el nombre del servidor (samuel01g) directamente a su IP sin usar un servidor DNS.
+
+Haz clic en el menú de Inicio, escribe Bloc de notas (Notepad), haz clic derecho y selecciona Ejecutar como administrador.
+
+En el Bloc de notas, ve a Archivo -> Abrir.
+
+Navega hasta esta ruta: C:\Windows\System32\drivers\etc
+
+Abajo a la derecha, cambia el filtro de "Documentos de texto (.txt)" a **"Todos los archivos (.*)"**.
+
+Selecciona el archivo hosts y ábrelo.
+
+Baja hasta el final del archivo y añade estas líneas (la IP de tu servidor y tu cliente Linux):
+
+>``` 
+> 172.26.1.31    samuel01g
+> 172.26.1.32    client01g
+Guarda el archivo (Ctrl + S) y ciérralo.
+
+
 
 
 
