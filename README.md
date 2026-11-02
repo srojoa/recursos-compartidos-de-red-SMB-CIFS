@@ -121,8 +121,17 @@ Si vemos que el servicio de sambaestá muerto tenemos que ponerlo en  **Active: 
 > **Comprobar CORTAFUEGOS**
 >
 > Para descartar un problema del servidor Samba con el cortafuegos, usaremos
-el comando `nmap -Pn IP-servidor-Samba` desde otra máquina GNU/Linux.
+el comando `nc -zv IP-servidor-Samba` desde otra máquina GNU/Linux.
 Los puertos SMB/CIFS (139 y 445) deben estar abiertos.
+
+Tenemos que ver algo como esto:
+
+>```
+>clienteXXg@samuel01g:~> nc -zv 172.26.1.31 139
+>Connection to 172.26.1.31 139 port [tcp/netbios-ssn] succeeded!
+>clienteXXg@samuel01g:~> nc -zv 172.26.1.31 445
+>Connection to 172.26.1.31 445 port [tcp/microsoft-ds] succeeded!
+
 
 ## 1.5 Crear los recursos compartidos de red
 
