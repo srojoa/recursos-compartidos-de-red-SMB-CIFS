@@ -103,6 +103,37 @@ Baja hasta el final del archivo y añade estas líneas (la IP de tu servidor y t
 > 172.26.1.32    client01g
 Guarda el archivo (Ctrl + S) y ciérralo.
 
+🔗 **Paso 3: Conectar a los recursos compartidos de Samba**
+El software ya viene preinstalado en Windows (el cliente SMB). Vamos a probar las conexiones:
+
+1. Probar el recurso público (Invitado / Solo lectura):
+
+Pulsa Win + R para abrir "Ejecutar".
+
+Escribe \\172.26.1.31\public01 o \\samuel01g\public01 y pulsa Enter.
+
+Debería abrirse la carpeta sin pedir contraseña. Intenta crear un archivo de texto ahí; debería darte un error de "Permiso denegado" (porque es de solo lectura).
+
+2. Probar el recurso castillo (Soldados / Lectura-Escritura):
+
+Pulsa Win + R y escribe \\172.26.1.31\castillo01.
+
+Te pedirá credenciales. Introduce:
+
+Usuario: soldado1
+
+Contraseña: (la que creaste con smbpasswd).
+
+(Si te da error, en el campo usuario escribe CURSO2627\soldado1 para indicar el dominio/grupo de trabajo).
+
+Debería abrirse. Intenta crear una carpeta dentro.
+
+3. Demostrar la restricción:
+
+Si intentas entrar a \\172.26.1.31\castillo01 usando el usuario pirata1, Windows te denegará el acceso.
+
+💡 Truco para Windows: Si Windows se queda con una contraseña guardada en caché y no te deja meter otra (por ejemplo, si ya entraste como soldado y ahora quieres entrar como pirata), abre el Panel de Control -> Administrador de credenciales -> Credenciales de Windows, y borra las que tengan que ver con 172.26.1.31 o samuel01g.
+
 
 
 
