@@ -182,6 +182,10 @@ Ejemplo de fichero de configuración:
 
 * `testparm`, verificar la sintaxis del fichero de configuración.
 * `more /etc/samba/smb.conf`, consultar el contenido del fichero de configuración.
+* Debes reiniciar los servicios para que los lean:
+   ```bash
+   sudo systemctl restart smb nmb
+   ```
 
 ## 1.6 Usuarios Samba
 
