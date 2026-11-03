@@ -360,9 +360,18 @@ Capturar imagen de lo siguiente:
 Capturar imágenes de todo el proceso.
 
 > Existen comandos (`smbclient`, `mount` , `smbmount`, etc.) para ayudarnos
-a acceder vía comandos al servidor Samba desde el cliente.
-> Puede ser que con las nuevas actualizaciones y cambios de las distribuciones
-alguno haya cambiado de nombre. ¡Ya lo veremos!
+a acceder vía comandos al servidor Samba desde el cliente:
+
+```bàsh
+smbclient //172.26.1.31/barco01 -U pirata1
+``` 
+>```
+>clienteXXg@samuel01g:~> smbclient //172.26.1.31/barco01 -U pirata1
+>Password for [WORKGROUP\pirata1]:
+>Try "help" to get a list of possible commands.
+>smb: \> 
+
+
 
 * Vamos a un equipo GNU/Linux que será nuestro cliente Samba. Desde este
 equipo usaremos comandos para acceder a la carpeta compartida.
