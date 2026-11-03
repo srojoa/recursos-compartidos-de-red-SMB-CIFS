@@ -276,7 +276,7 @@ Comprobar que el servicio SMB/CIF está a la escucha:
    
 # 2. Windows
 
-* [Configurar](https://github.com/srojoa/recursos-compartidos-de-red-SMB-CIFS/blob/main/configurar-windows-11.md../../global/configuracion/windows.md) el cliente Windows.
+* [Configurar](https://github.com/srojoa/recursos-compartidos-de-red-SMB-CIFS/blob/main/configurar-windows-11.md) el cliente Windows.
 * Usar nombre y la IP que hemos establecido al comienzo.
 * Configurar el fichero `...\etc\hosts` de Windows.
 * En los clientes Windows el software necesario viene preinstalado.
