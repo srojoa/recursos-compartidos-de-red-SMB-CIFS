@@ -281,17 +281,23 @@ Comprobar que el servicio SMB/CIF está a la escucha:
 * Configurar el fichero `...\etc\hosts` de Windows.
 * En los clientes Windows el software necesario viene preinstalado.
 
-## 2.1 Cliente Windows GUI
+## 2.1 Cliente Windows - PowerShell
 
 Desde un cliente Windows vamos a acceder a los recursos compartidos del servidor Samba.
 
-* Escribimos `\\ip-del-servidor-samba` y vemos lo siguiente:
+* Escribimos `net view \\ip-del-servidor-samba` y vemos lo siguiente:
 
 <img width="748" height="186" alt="Screenshot From 2026-11-03 03-27-05" src="https://github.com/user-attachments/assets/e7575ba2-e182-4746-8551-4e6556a1dfc8" />
 
 
 * Acceder al recurso compartido `publicXX`.
+  ```bash
+  net use Z: \\172.26.1.31\public01 /user:soldado1
+  ```
 * Acceder al recurso compartido `castilloXX` con el usuario `soldado`.
+```bash
+net use Z: \\samuel01g\castillo01 /user:soldado1
+```
     * `net use` para ver las conexiones abiertas desde un terminal con nuestro usuario normal.
     * `net use * /d /y`, para borrar todas las conexión SMB/CIFS que se hayan realizado desde un terminal con nuestro usuario normal.
 * Acceder al recurso compartido `barcoXX` con el usuario `pirata`.
