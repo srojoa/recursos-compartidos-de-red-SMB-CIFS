@@ -295,16 +295,16 @@ Desde un cliente Windows vamos a acceder a los recursos compartidos del servidor
   net use Z: \\172.26.1.31\public01 /user:soldado1
   ```
 * Acceder al recurso compartido `castilloXX` con el usuario `soldado`.
-```bash
-net use Z: \\samuel01g\castillo01 /user:soldado1
-```
+ ```bash
+ net use Z: \\samuel01g\castillo01 /user:soldado1
+ ```
     * `net use` para ver las conexiones abiertas desde un terminal con nuestro usuario normal.
     * `net use * /d /y`, para borrar todas las conexión SMB/CIFS que se hayan realizado desde un terminal con nuestro usuario normal.
 * Acceder al recurso compartido `barcoXX` con el usuario `pirata`.
 * Ir al servidor Samba.
-* Capturar imagen de los siguientes comandos para comprobar los resultados:
-    * `smbstatus`, desde el servidor Samba.
-    * `lsof -i -Pn`,para ver las conexiones establecidas con la máquina cliente.
+* Capturar imagen de los siguientes comandos desde el servidor para comprobar los resultados:
+    * `sudo smbstatus`, desde el servidor Samba.
+    * `sudo lsof -i -Pn`, desde el servidor para ver las conexiones establecidas con la máquina cliente.
 
 ## 2.2 Cliente Windows comandos
 
