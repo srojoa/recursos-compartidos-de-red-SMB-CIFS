@@ -261,20 +261,21 @@ sysctl net.ipv4.ip_forward      # El sistema actúa como router? net.ipv4.ip_for
 ```
 🔥FASE 3: El "Muro de los Lamentos" (Cortafuegos de Proxmox)
 qm list
-qm config 101 | grep firewall  # El firewall de la VM está bloqueando cuando en la salida del comando vemoa firewall=1
+qm config 101 | grep firewall  # El firewall de la VM está bloqueando cuando, en la salida del comando vemos firewall=1
 
 Esto es lo que debemos ver cuando está desbloqueado firewall=0:
+   >boot: order=scsi0;ide2;net0
+   >
+   >net0: virtio=BC:24:11:a1:eb:ca,bridge=vmbr0,firewall=0
+
+```
+
 ```
 El comando a introducir es:
 ```bash
 qm set 100 --net0 virtio=BC:24:11:81:E9:B3,bridge=vmbr0,firewall=0
 ```
 
-   >boot: order=scsi0;ide2;net0
-   >
-   >net0: virtio=BC:24:11:a1:eb:ca,bridge=vmbr0,firewall=0
-
-```
 🌐 FASE 4: Comprobaciones de Conectividad (El "Ping")
 1. Desde la VM a Proxmox:
 
