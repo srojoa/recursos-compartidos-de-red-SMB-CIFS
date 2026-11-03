@@ -54,7 +54,7 @@ Contrroladora Ethernet
 
 **Paso 1: Configurar IP y Nombre de equipo en Windows 11**
 
-* **A. Cambiar el Nombre del equipo:**
+* **1.1 Cambiar el Nombre del equipo:**
   
   Abre Configuración (Settings) -> Sistema (System) -> Acerca de (About).
   
@@ -62,25 +62,25 @@ Contrroladora Ethernet
   
   Escribe client01w y reinicia el equipo cuando te lo pida.
   
- * **B. Configurar la IP estática:**
+ * **1.2 Configurar la IP estática:**
   
-  Ve a Configuración -> Red e Internet (Network & Internet) -> Ethernet.
+  * Ve a Configuración -> Red e Internet (Network & Internet) -> Ethernet.
   
-  Haz clic en Editar (Edit) al lado de "Asignación de IP" (IP assignment).
+  * Haz clic en Editar (Edit) al lado de "Asignación de IP" (IP assignment).
   
-  Cambia a Manual y activa IPv4.
+  * Cambia a Manual y activa IPv4.
   
-  Rellena los datos:
+  * Rellena los datos:
   
-  Dirección IP: 172.26.1.11
+    * Dirección IP: 172.26.1.11
   
-  Máscara de subred: 255.255.0.0 (o /16)
+    * Máscara de subred: 255.255.0.0 (o /16)
   
-  Puerta de enlace: 172.26.0.254
+    * Puerta de enlace: 172.26.0.254
   
-  DNS preferido: 172.26.0.254
+    * DNS preferido: 172.26.0.254
   
-  Haz clic en Guardar.
+  * Haz clic en Guardar.
 
 
 📝 **Paso 2: Configurar el archivo hosts de Windows**
@@ -106,29 +106,29 @@ Guarda el archivo (Ctrl + S) y ciérralo.
 🔗 **Paso 3: Conectar a los recursos compartidos de Samba**
 El software ya viene preinstalado en Windows (el cliente SMB). Vamos a probar las conexiones:
 
-1. Probar el recurso público (Invitado / Solo lectura):
+**3.1 Probar el recurso público (Invitado / Solo lectura):**
 
-Pulsa Win + R para abrir "Ejecutar".
+  * Pulsa Win + R para abrir "Ejecutar".
 
-Escribe \\\172.26.1.31\public01 o \\samuel01g\public01 y pulsa Enter.
+  * Escribe \\\172.26.1.31\public01 o \\samuel01g\public01 y pulsa Enter.
 
 Debería abrirse la carpeta sin pedir contraseña. Intenta crear un archivo de texto ahí; debería darte un error de "Permiso denegado" (porque es de solo lectura).
 
-2. Probar el recurso castillo (Soldados / Lectura-Escritura):
+**3.2 Probar el recurso castillo (Soldados / Lectura-Escritura):**
 
-Pulsa Win + R y escribe \\\172.26.1.31\castillo01.
+  * Pulsa Win + R y escribe \\\172.26.1.31\castillo01.
 
-Te pedirá credenciales. Introduce:
+  * Te pedirá credenciales. Introduce:
 
-Usuario: soldado1
+    * Usuario: soldado1
 
-Contraseña: (la que creaste con smbpasswd).
+    * Contraseña: (la que creaste con smbpasswd).
 
 (Si te da error, en el campo usuario escribe CURSO2627\soldado1 para indicar el dominio/grupo de trabajo).
 
 Debería abrirse. Intenta crear una carpeta dentro.
 
-3. Demostrar la restricción:
+**3.3 Demostrar la restricción:**
 
 Si intentas entrar a \\\172.26.1.31\castillo01 usando el usuario pirata1, Windows te denegará el acceso.
 
