@@ -56,11 +56,11 @@ Contrroladora Ethernet
 
 * **1.1 Cambiar el Nombre del equipo:**
   
-  Abre Configuración (Settings) -> Sistema (System) -> Acerca de (About).
+  - Abre Configuración (Settings) -> Sistema (System) -> Acerca de (About).
   
-  Haz clic en Cambiar el nombre de este equipo (Rename this PC).
+  - Haz clic en Cambiar el nombre de este equipo (Rename this PC).
   
-  Escribe client01w y reinicia el equipo cuando te lo pida.
+  - Escribe client01w y reinicia el equipo cuando te lo pida.
   
  * **1.2 Configurar la IP estática:**
   
@@ -86,15 +86,15 @@ Contrroladora Ethernet
 📝 **Paso 2: Configurar el archivo hosts de Windows**
 El archivo hosts permite que Windows resuelva el nombre del servidor (samuel01g) directamente a su IP sin usar un servidor DNS.
 
-Haz clic en el menú de Inicio, escribe Bloc de notas (Notepad), haz clic derecho y selecciona Ejecutar como administrador.
+- Haz clic en el menú de Inicio, escribe Bloc de notas (Notepad), haz clic derecho y selecciona Ejecutar como administrador.
 
-En el Bloc de notas, ve a Archivo -> Abrir.
+- En el Bloc de notas, ve a Archivo -> Abrir.
 
-Navega hasta esta ruta: C:\Windows\System32\drivers\etc
+- Navega hasta esta ruta: C:\Windows\System32\drivers\etc
 
-Abajo a la derecha, cambia el filtro de "Documentos de texto (.txt)" a **"Todos los archivos (.*)"**.
+- Abajo a la derecha, cambia el filtro de "Documentos de texto (.txt)" a **"Todos los archivos (.*)"**.
 
-Selecciona el archivo hosts y ábrelo.
+- Selecciona el archivo hosts y ábrelo.
 
 Baja hasta el final del archivo y añade estas líneas (la IP de tu servidor y tu cliente Linux):
 
