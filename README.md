@@ -287,7 +287,8 @@ Desde un cliente Windows vamos a acceder a los recursos compartidos del servidor
 
 * Escribimos `\\ip-del-servidor-samba` y vemos lo siguiente:
 
-![samba-win7-cliente-gui](./images/samba-win7-client-gui.png)
+<img width="748" height="186" alt="Screenshot From 2026-11-03 03-27-05" src="https://github.com/user-attachments/assets/e7575ba2-e182-4746-8551-4e6556a1dfc8" />
+
 
 * Acceder al recurso compartido `publicXX`.
 * Acceder al recurso compartido `castilloXX` con el usuario `soldado`.
