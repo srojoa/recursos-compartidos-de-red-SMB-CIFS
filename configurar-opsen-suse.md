@@ -278,13 +278,13 @@ qm set 100 --net0 virtio=BC:24:11:81:E9:B3,bridge=vmbr0,firewall=0
 
 🌐 FASE 4: Comprobaciones de Conectividad (El "Ping")
 1. Desde la VM a Proxmox:
-
+```bash
 ping -c 4 172.26.0.254
-
+```
 2. Desde Proxmox a la VM:
-
+```bash
 ping -c 4 172.26.1.31
-
+```
 3. El "Espía" definitivo:
 ```bash
 tcpdump -i any -n icmp # Ejecuta Desde Proxmox
