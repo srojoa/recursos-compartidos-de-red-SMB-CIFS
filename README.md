@@ -331,31 +331,7 @@ Montar el recurso `barco` de forma persistente.
 * [Configurar](../../global/configuracion/opensuse.md) el cliente GNU/Linux.
 * Usar nombre y la IP que hemos establecido al comienzo.
 * Configurar el fichero `/etc/hosts` de la máquina.
-
-## 3.1 Cliente GNU/Linux GUI
-
-Desde en entorno gráfico, podemos comprobar el acceso a recursos compartidos SMB/CIFS.
-
-> Algunas herramientas para acceder a recursos Samba por entorno gráfico: Yast en OpenSUSE,
-Nautilus en GNOME, Konqueror en KDE, En Ubuntu podemos ir a "Lugares -> Conectar con el servidor...",
-También podemos instalar "smb4k".
-
-Ejemplo accediendo al recurso prueba del servidor Samba,
-pulsamos CTRL+L y escribimos `smb://IP-SERVIDOR-SAMBA`:
-
-![linux-gui-client](./images/linux-gui-client.png)
-
-> En el momento de autenticarse para acceder al recurso remoto, poner
-en **Dominio** el *nombre-netbios-del-servidor-samba*.
-
-Capturar imagen de lo siguiente:
-* Probar a crear carpetas/archivos en `castilloXX` y en  `barcoXX`.
-* Comprobar que el recurso `publicXX` es de sólo lectura.
-* Capturar imagen de los siguientes comandos para comprobar los resultados:
-    * `sudo smbstatus`, desde el servidor Samba.
-    * `sudo lsof -i -Pn`, desde el servidor Samba.
-
-## 3.2 Cliente GNU/Linux comandos
+## 3.1 Cliente GNU/Linux comandos
 
 Capturar imágenes de todo el proceso.
 
@@ -412,7 +388,7 @@ mount -t cifs //IP-servidor-Samba/castilloXX /mnt/remotoXX/castillo -o username=
 debe aparecer en la máquina del servidor Samba. ¡Comprobarlo!
 > * Para desmontar el recurso remoto usamos el comando `umount`.
 
-## 3.3 Montaje automático
+## 3.2 Montaje automático
 
 * Hacer una instantánea de la MV antes de seguir. Por seguridad.
 * Capturar imágenes del proceso.
