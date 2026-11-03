@@ -110,13 +110,13 @@ El software ya viene preinstalado en Windows (el cliente SMB). Vamos a probar la
 
 Pulsa Win + R para abrir "Ejecutar".
 
-Escribe \\172.26.1.31\public01 o \\samuel01g\public01 y pulsa Enter.
+Escribe \\\172.26.1.31\public01 o \\samuel01g\public01 y pulsa Enter.
 
 Debería abrirse la carpeta sin pedir contraseña. Intenta crear un archivo de texto ahí; debería darte un error de "Permiso denegado" (porque es de solo lectura).
 
 2. Probar el recurso castillo (Soldados / Lectura-Escritura):
 
-Pulsa Win + R y escribe \\172.26.1.31\castillo01.
+Pulsa Win + R y escribe \\\172.26.1.31\castillo01.
 
 Te pedirá credenciales. Introduce:
 
@@ -130,9 +130,13 @@ Debería abrirse. Intenta crear una carpeta dentro.
 
 3. Demostrar la restricción:
 
-Si intentas entrar a \\172.26.1.31\castillo01 usando el usuario pirata1, Windows te denegará el acceso.
+Si intentas entrar a \\\172.26.1.31\castillo01 usando el usuario pirata1, Windows te denegará el acceso.
 
 💡 Truco para Windows: Si Windows se queda con una contraseña guardada en caché y no te deja meter otra (por ejemplo, si ya entraste como soldado y ahora quieres entrar como pirata), abre el Panel de Control -> Administrador de credenciales -> Credenciales de Windows, y borra las que tengan que ver con 172.26.1.31 o samuel01g.
+
+<img width="629" height="400" alt="Screenshot From 2026-11-03 02-38-05" src="https://github.com/user-attachments/assets/bc0288ad-a3cc-4348-8798-a621e7b1fa20" />
+<img width="787" height="481" alt="Screenshot From 2026-11-03 02-39-18" src="https://github.com/user-attachments/assets/14516da7-ccc8-4f5f-b396-c56fcf8bef29" />
+
 
 
 
