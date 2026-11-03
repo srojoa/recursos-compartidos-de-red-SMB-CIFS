@@ -369,8 +369,21 @@ smbclient //172.26.1.31/barco01 -U pirata1
 >clienteXXg@samuel01g:~> smbclient //172.26.1.31/barco01 -U pirata1
 >Password for [WORKGROUP\pirata1]:
 >Try "help" to get a list of possible commands.
->smb: \> 
+>smb: \>
 
+>```
+>serverXXg@samuel01g:~> sudo smbstatus
+>
+>Samba version 4.22.11-git.560.f0322ab554160000.1.1SUSE-oS16.0-x86_64
+>PID     Username     Group        Machine                                   Protocol Version  Encryption           Signing              
+>----------------------------------------------------------------------------------------------------------------------------------------
+>1982    pirata1      pirata1      172.26.1.32 (ipv4:172.26.1.32:58934)      SMB3_11           -                    partial(AES-128-GMAC)
+>
+>Service      pid     Machine       Connected at                     Encryption   Signing     
+>---------------------------------------------------------------------------------------------
+>barco01      1982    172.26.1.32   Tue Oct  3 02:07:12 PM 2026 CET  -            -           
+>
+>No locked files
 
 
 * Vamos a un equipo GNU/Linux que será nuestro cliente Samba. Desde este
