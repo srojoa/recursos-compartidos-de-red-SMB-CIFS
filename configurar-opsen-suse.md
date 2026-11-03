@@ -267,6 +267,7 @@ Esto es lo que debemos ver cuando está desbloqueado firewall=0:
 ```
 
    >boot: order=scsi0;ide2;net0
+   >
    >net0: virtio=BC:24:11:a1:eb:ca,bridge=vmbr0,firewall=0
 
 ```
