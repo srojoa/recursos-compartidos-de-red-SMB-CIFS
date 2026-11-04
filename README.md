@@ -383,28 +383,42 @@ smbclient //172.26.1.31/barco01 -U pirata1
 * Vamos a un equipo GNU/Linux que será nuestro cliente Samba. Desde este
 equipo usaremos comandos para acceder a la carpeta compartida.
 
-> * Probar desde una máquina Ubuntu `sudo smbtree` (REVISAR: no muestra nada)
->    * Esto muestra todos los equipos/recursos de la red SMB/CIFS.
+> * Probar desde una el clienteXXg de OpenSuse
+>    * Esto lista los recursos del servidor equipos/recursos de la red SMB/CIFS:
+     ```bash
+      smbclient -L //172.26.1.31 -U soldado1
+      ``` 
 >    * Hay que parar el cortafuegos para que funcione (`systemctl stop firewalld`), o bien
 >    * ejecutar comando desde la máquina real.
 
 * Probar desde el cliente GNU/Linux el comando `smbclient --list IP-SERVIDOR-SAMBA`, que muestra los recursos SMB/CIFS del servidor remoto.
 * Ahora crearemos en local la carpeta `/mnt/remotoXX/castillo`.
 * **MONTAJE MANUAL**: Con el usuario root, usamos el siguiente comando para montar un recurso compartido de Samba Server, como si fuera una carpeta más de nuestro sistema:
-
+1. Crea el punto de montaje (la carpeta local):
+```bash
+sudo mkdir -p /mnt/remoto01/castillo
 ```
-mount -t cifs //IP-servidor-Samba/castilloXX /mnt/remotoXX/castillo -o username=soldado1
+2. Monta el recurso remoto usando el protocolo CIFS (el estándar moderno para Samba):
+```bash
+sudo mount -t cifs //172.26.1.31/castillo01 /mnt/remoto01/castillo -o username=soldado1
+```
+3. Comprueba que está montado:
+```bash
+df -hT
+```
+4. Comprobación de escritura:
+```bash
+sudo touch /mnt/remoto01/castillo/archivo_prueba.txt
 ```
 
-> En versiones anteriores de GNU/Linux se usaba el comando: `smbmount //172.AA.XX.31/public /mnt/remotoXX/public/ -o -username=sambaguest`.
 
-* `df -hT`, para comprobar que el recurso ha sido montado.
-
-![samba-linux-mount-cifs](./images/samba-linux-mount-cifs.png)
 
 > * Si montamos la carpeta de `castillo`, lo que escribamos en `/mnt/remotoXX/castillo`
 debe aparecer en la máquina del servidor Samba. ¡Comprobarlo!
-> * Para desmontar el recurso remoto usamos el comando `umount`.
+> * Para desmontar el recurso remoto usamos el comando `umount`:
+```bash
+sudo umount /mnt/remoto01/castillo
+```
 
 ## 3.2 Montaje automático
 
@@ -419,10 +433,27 @@ Para configurar acciones de montaje automáticos cada vez que se inicie el equip
 debemos configurar el fichero `/etc/fstab`.
 
 * Hacer una copia de seguridad al fichero `/etc/fstab`.
+```bash
+sudo cp /etc/fstab /etc/fstab.backup
+```
 * Modificar el fichero, incluyendo una línea de la siguiente forma:
 
 ```
 //IP-servidor-samba/publicXX /mnt/remotoXX/public cifs username=soldado1,password=CLAVE-DE-SOLDADO1 0 0
+```
+
+xEj:
+```bash
+sudo nano /etc/fstab
+//172.26.1.31/castillo01 /mnt/remoto01/castillo cifs username=soldado1,password=TU_CONTRASEÑA 0 0
+```
+Probar sin reiniciar:
+```bash
+sudo mount -a
+```
+Comprobarlo:
+```bash
+df -hT
 ```
 
 * Reiniciar el equipo y comprobar que se realiza el montaje automático al inicio (df -hT).
@@ -440,7 +471,7 @@ Usuarios:
 * ¿Puedo definir un usuario en Samba llamado soldado3, y que no exista como usuario del sistema?
 * ¿Cómo podemos hacer que los usuarios soldado1 y soldado2 no puedan acceder al sistema pero sí al samba? (Consultar `/etc/passwd`)
 
-**Posibles problemas:**
+**ANEXO - Posibles problemas:**
   * Cambiar la contraseña del usuario en samba server:
   ```bash
   sudo smbpasswd -a soldado1
