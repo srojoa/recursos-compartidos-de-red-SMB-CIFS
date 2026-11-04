@@ -314,7 +314,7 @@ POSIBLES PROBLEMAS:
 ```bash
 Set-SmbClientConfiguration -RequireSecuritySignature $false -Force
 Set-SmbClientConfiguration -EnableInsecureGuestLogons $true -Force
-``
+```
 
 ## 2.2 Cliente Windows comandos
 
@@ -351,7 +351,8 @@ Montar el recurso `barco` de forma persistente.
 
 Capturar imágenes de todo el proceso.
 
->``` Existen comandos (`smbclient`, `mount` , `smbmount`, etc.) para ayudarnos
+>```
+>Existen comandos (`smbclient`, `mount` , `smbmount`, etc.) para ayudarnos
 >a acceder vía comandos al servidor Samba desde el cliente:
 
 ```bash
