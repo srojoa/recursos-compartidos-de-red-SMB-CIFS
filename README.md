@@ -114,6 +114,9 @@ sudo zypper install samba samba-client
    ```bash
    sudo testparm
    ```
+
+Comprobar [ADJUNTAR PANTALLAZO]:
+
 * En la pestaña de `Inicio` definimos
     * Iniciar el servicio durante el arranque de la máquina.
     * Ajustes del cortafuegos -> Abrir puertos
@@ -228,6 +231,8 @@ Ejemplo de fichero de configuración:
 >	sambaguest      Disk      Home Directories
 >SMB1 disabled -- no workgroup available
 
+Comprobar [ADJUNTAR PANTALLAZO]:
+
 * Chequear desde el Cliente:
 >```
 >clienteXXg@samuel01g:~> smbclient -L //172.26.1.31 -N -U% -m SMB2
@@ -243,6 +248,8 @@ Ejemplo de fichero de configuración:
 >	IPC$            IPC       IPC Service (Servidor de samuel-01)
 >	sambaguest      Disk      Home Directories
 >SMB1 disabled -- no workgroup available
+
+Comprobar [ADJUNTAR PANTALLAZO]:
 
 ## 1.6 Usuarios Samba
 
@@ -260,6 +267,7 @@ Después de crear los usuarios en el sistema, hay que añadirlos a Samba.
 >pirata2:1002:
 >soldado2:1004:
 
+Comprobar [ADJUNTAR PANTALLAZO]:
 
 ## 1.7 Reiniciar
 
@@ -305,6 +313,7 @@ Desde un cliente Windows vamos a acceder a los recursos compartidos del servidor
  ```
 <img width="543" height="117" alt="Screenshot From 2026-11-03 14-55-37" src="https://github.com/user-attachments/assets/7ee25ce8-5485-44a1-aeed-95fc0fce6f9f" />
 
+Comprobar [ADJUNTAR PANTALLAZO]:
 
     * `net use` para ver las conexiones abiertas desde un terminal con nuestro usuario normal.
     * `net use * /d /y`, para borrar todas las conexión SMB/CIFS que se hayan realizado desde un terminal con nuestro usuario normal.
@@ -313,6 +322,7 @@ Desde un cliente Windows vamos a acceder a los recursos compartidos del servidor
 * Capturar imagen de los siguientes comandos desde el servidor para comprobar los resultados:
     * `sudo smbstatus`, desde el servidor Samba.
     * `sudo lsof -i -Pn`, desde el servidor para ver las conexiones establecidas con la máquina cliente.
+Comprobar [ADJUNTAR PANTALLAZO]:
 
 POSIBLES PROBLEMAS:
 * la seguridad en Windows, deshabilitarla e introducir en POWER SHELL:
@@ -333,7 +343,7 @@ Con `net use /?`, podemos consultar la ayuda.
 Capturar imagen de los comandos siguientes:
 * `net view \\IP-SERVIDOR-SAMBA`, para ver los recursos del servidor remoto.
 
-
+Comprobar [ADJUNTAR PANTALLAZO]:
 
 Montar el recurso `barco` de forma persistente, en la unidad S:
 * `net use S: \\IP-SERVIDOR-SAMBA\recurso contraseña /USER:usuario /p:yes` crear una conexión con el recurso compartido y lo monta en la unidad S. Con la opción `/persistent:yes` hacemos el montaje persistente. De modo que se mantiene en cada reinicio de máquina.
@@ -347,6 +357,7 @@ net use S: \\172.26.1.31\barco01 /USER:pirata1 * /persistent:yes
     * `sudo smbstatus`, desde el servidor Samba.
     * `sudo lsof -i -Pn | grep smbd`, para ver las conexiones establecidas con el cliente.
 
+Comprobar [ADJUNTAR PANTALLAZO]:
 ---
 
 # 3 Cliente GNU/Linux
@@ -386,6 +397,7 @@ smbclient //172.26.1.31/barco01 -U pirata1
 >
 >No locked files
 
+Comprobar [ADJUNTAR PANTALLAZO]:
 
 * Vamos a un equipo GNU/Linux que será nuestro cliente Samba. Desde este
 equipo usaremos comandos para acceder a la carpeta compartida.
@@ -418,7 +430,7 @@ df -hT
 sudo touch /mnt/remoto01/castillo/archivo_prueba.txt
 ```
 
-
+Comprobar [ADJUNTAR PANTALLAZO]:
 
 > * Si montamos la carpeta de `castillo`, lo que escribamos en `/mnt/remotoXX/castillo`
 debe aparecer en la máquina del servidor Samba. ¡Comprobarlo!
