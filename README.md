@@ -358,7 +358,7 @@ Capturar imágenes de todo el proceso.
 ```bash
 smbclient //172.26.1.31/barco01 -U pirata1
 ``` 
-
+* Output:
 >```
 >clienteXXg@samuel01g:~> smbclient //172.26.1.31/barco01 -U pirata1
 >Password for [WORKGROUP\pirata1]:
