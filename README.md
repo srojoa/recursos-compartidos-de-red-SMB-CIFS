@@ -328,17 +328,19 @@ Con `net use /?`, podemos consultar la ayuda.
 Capturar imagen de los comandos siguientes:
 * `net view \\IP-SERVIDOR-SAMBA`, para ver los recursos del servidor remoto.
 
-> Para REVISAR:
-> * `net view`, para ver las máquinas (SMB/CIFS) accesibles por la red.
-> * [Error 6118](https://stackoverflow.com/questions/13676714/command-prompt-net-view-system-error-6118) que aparece el ejecutar `net view` en Windows.
 
-Montar el recurso `barco` de forma persistente.
-* `net use S: \\IP-SERVIDOR-SAMBA\recurso contraseña /USER:usuario /p:yes` crear una conexión con el recurso compartido y lo monta en la unidad S. Con la opción `/p:yes` hacemos el montaje persistente. De modo que se mantiene en cada reinicio de máquina.
+
+Montar el recurso `barco` de forma persistente, en la unidad S:
+* `net use S: \\IP-SERVIDOR-SAMBA\recurso contraseña /USER:usuario /p:yes` crear una conexión con el recurso compartido y lo monta en la unidad S. Con la opción `/persistent:yes` hacemos el montaje persistente. De modo que se mantiene en cada reinicio de máquina.
+
+```bash
+net use S: \\172.26.1.31\barco01 /USER:pirata1 * /persistent:yes
+```
 * `net use`, comprobamos.
 * Ahora podemos entrar en la unidad S ("s:") y crear carpetas, etc.
 * Capturar imagen de los siguientes comandos para comprobar los resultados:
     * `sudo smbstatus`, desde el servidor Samba.
-    * `lsof -i -Pn`, para ver las conexiones establecidas con el cliente.
+    * `sudo lsof -i -Pn | grep smbd`, para ver las conexiones establecidas con el cliente.
 
 ---
 
