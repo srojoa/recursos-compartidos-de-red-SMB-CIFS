@@ -351,12 +351,13 @@ Montar el recurso `barco` de forma persistente.
 
 Capturar imágenes de todo el proceso.
 
-> Existen comandos (`smbclient`, `mount` , `smbmount`, etc.) para ayudarnos
-a acceder vía comandos al servidor Samba desde el cliente:
+>``` Existen comandos (`smbclient`, `mount` , `smbmount`, etc.) para ayudarnos
+>a acceder vía comandos al servidor Samba desde el cliente:
 
-```bàsh
+```bash
 smbclient //172.26.1.31/barco01 -U pirata1
 ``` 
+
 >```
 >clienteXXg@samuel01g:~> smbclient //172.26.1.31/barco01 -U pirata1
 >Password for [WORKGROUP\pirata1]:
