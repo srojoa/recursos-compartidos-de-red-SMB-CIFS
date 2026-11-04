@@ -100,7 +100,7 @@ Baja hasta el final del archivo y añade estas líneas (la IP de tu servidor y t
 
 >``` 
 > 172.26.1.31    samuel01g
-> 172.26.1.32    client01g
+> 172.26.1.32    cliente01g
 Guarda el archivo (Ctrl + S) y ciérralo.
 
 🔗 **Paso 3: Conectar a los recursos compartidos de Samba**
