@@ -139,7 +139,7 @@ Comprobar [ADJUNTAR PANTALLAZO]:
    >          man:samba(7)
    >          man:smb.conf(5)
 
-Si vemos que el servicio de sambaestá muerto tenemos que ponerlo en  **Active: active (running)**:
+Si vemos que el servicio de samba está muerto tenemos que ponerlo en  **Active: active (running)**:
    ```bash
    sudo systemctl start smb nmb
    sudo systemctl status smb nmb
