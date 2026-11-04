@@ -88,6 +88,11 @@ por comandos editando el fichero `/etc/passwd`.
 | castilloXX | /srv/sambaXX/castillo.d | supersamba | soldados   | 770 |
 | barcoXX    | /srv/sambaXX/barco.d    | supersamba | piratas    | 770 |
 
+Comprobar [ADJUNTAR PANTALLAZO]:
+```bash
+ls -ld /srv/sambaXX/*
+``` 
+
 ## 1.4 Configurar el servidor Samba
 
 > Para instalar y configurar el servicio Samba:
