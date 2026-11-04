@@ -298,6 +298,9 @@ Desde un cliente Windows vamos a acceder a los recursos compartidos del servidor
  ```bash
  net use Z: \\samuel01g\castillo01 /user:soldado1
  ```
+<img width="543" height="117" alt="Screenshot From 2026-11-03 14-55-37" src="https://github.com/user-attachments/assets/7ee25ce8-5485-44a1-aeed-95fc0fce6f9f" />
+
+
     * `net use` para ver las conexiones abiertas desde un terminal con nuestro usuario normal.
     * `net use * /d /y`, para borrar todas las conexión SMB/CIFS que se hayan realizado desde un terminal con nuestro usuario normal.
 * Acceder al recurso compartido `barcoXX` con el usuario `pirata`.
@@ -305,6 +308,13 @@ Desde un cliente Windows vamos a acceder a los recursos compartidos del servidor
 * Capturar imagen de los siguientes comandos desde el servidor para comprobar los resultados:
     * `sudo smbstatus`, desde el servidor Samba.
     * `sudo lsof -i -Pn`, desde el servidor para ver las conexiones establecidas con la máquina cliente.
+
+POSIBLES PROBLEMAS:
+* la seguridad en Windows, deshabilitarla e introducir en POWER SHELL:
+```bash
+Set-SmbClientConfiguration -RequireSecuritySignature $false -Force
+Set-SmbClientConfiguration -EnableInsecureGuestLogons $true -Force
+``
 
 ## 2.2 Cliente Windows comandos
 
