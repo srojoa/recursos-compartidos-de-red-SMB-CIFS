@@ -288,7 +288,8 @@ ping -c 4 172.26.1.31
 3. El "Espía" definitivo:
 ```bash
 tcpdump -i any -n icmp # Ejecuta Desde Proxmox
-ping -c 4 172.26.1.31  # Ejecuta Desde OpenSUSE
+ping -c 4 172.26.0.254  # Ejecuta Desde OpenSUSE
+ping -c 4 8.8.8.8       # Ejecuta Desde OpenSUSE
 ```
 
 
