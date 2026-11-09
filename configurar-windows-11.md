@@ -101,6 +101,12 @@ Baja hasta el final del archivo y añade estas líneas (la IP de tu servidor y t
 >``` 
 > 172.26.1.31    samuel01g
 > 172.26.1.32    cliente01g
+
+Mediante PowerShell:
+```bash
+Add-Content -Path "C:\Windows\System32\drivers\etc\hosts" -Value "172.26.1.31`tsamuel01g", "172.26.1.32`tcliente01g" -Encoding ASCII
+Get-Content "C:\Windows\System32\drivers\etc\hosts" | Select-Object -Last 5
+```
 Guarda el archivo (Ctrl + S) y ciérralo.
 
 🔗 **Paso 3: Conectar a los recursos compartidos de Samba**
