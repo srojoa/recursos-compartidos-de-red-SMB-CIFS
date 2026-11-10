@@ -286,6 +286,8 @@ Comprobar que el servicio SMB/CIF está a la escucha:
 >smbd      3764      root 29u  IPv4  33998      0t0  TCP *:445 (LISTEN)
 >smbd      3764      root 30u  IPv4  33999      0t0  TCP *:139 (LISTEN)
 
+Comprobar [ADJUNTAR PANTALLAZO]:
+
    
 # 2. Windows
 
