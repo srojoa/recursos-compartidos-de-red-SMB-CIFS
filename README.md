@@ -315,6 +315,7 @@ Desde un cliente Windows vamos a acceder a los recursos compartidos del servidor
  ```
 <img width="543" height="117" alt="Screenshot From 2026-11-03 14-55-37" src="https://github.com/user-attachments/assets/7ee25ce8-5485-44a1-aeed-95fc0fce6f9f" />
 
+
 Comprobar [ADJUNTAR PANTALLAZO]:
 
     * `net use` para ver las conexiones abiertas desde un terminal con nuestro usuario normal.
@@ -324,6 +325,7 @@ Comprobar [ADJUNTAR PANTALLAZO]:
 * Capturar imagen de los siguientes comandos desde el servidor para comprobar los resultados:
     * `sudo smbstatus`, desde el servidor Samba.
     * `sudo lsof -i -Pn`, desde el servidor para ver las conexiones establecidas con la máquina cliente.
+
 Comprobar [ADJUNTAR PANTALLAZO]:
 
 POSIBLES PROBLEMAS:
